@@ -1,5 +1,5 @@
 {
-  "name": "doubles-matching",
+  "name": "remix-on-hono-template",
   "private": true,
   "sideEffects": false,
   "type": "module",
