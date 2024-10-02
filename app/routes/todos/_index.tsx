@@ -1,11 +1,8 @@
 import { useLoaderData } from '@remix-run/react';
-import { hc } from 'hono/client';
-import { AppType } from 'server';
-
-const client = hc<AppType>(import.meta.env.VITE_API_URL);
+import { apiClient } from '~/libs/rpc';
 
 export const loader = async () => {
-  const res = await client.api.todos.$get();
+  const res = await apiClient.api.todos.$get();
   return res.json();
 };
 
