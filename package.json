@@ -5,14 +5,14 @@
   "type": "module",
   "scripts": {
     "build": "remix vite:build",
-    "deploy": "npm run build && wrangler pages deploy",
+    "deploy": "pnpm run build && wrangler pages deploy",
     "dev": "remix vite:dev",
     "format": "prettier --write .",
     "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
     "start": "wrangler pages dev ./build/client",
     "typecheck": "tsc",
     "typegen": "wrangler types",
-    "preview": "npm run build && wrangler pages dev",
+    "preview": "pnpm build --mode staging && wrangler pages dev",
     "cf-typegen": "wrangler types"
   },
   "dependencies": {
