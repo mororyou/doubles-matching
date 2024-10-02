@@ -1,21 +1,40 @@
-# Welcome to Remix + Cloudflare!
+# Welcome to Remix + Cloudflare + Hono RPC
 
 - 📖 [Remix docs](https://remix.run/docs)
 - 📖 [Remix Cloudflare docs](https://remix.run/guides/vite#cloudflare)
+
+## Created .env
+```sh
+touch .env 
+```
+
+`.env` : 共通
+```
+VITE_API_URL="https://****/" -- 本番環境のURLを
+```
+
+`.env.local` : pnpm run dev 時
+```env
+VITE_API_URL="http://localhost:5173/"
+```
+
+`.env.preview` : pnpm run preview 時
+```env
+VITE_API_URL="http://localhost:8788/"
+```
 
 ## Development
 
 Run the dev server:
 
 ```sh
-npm run dev
+pnpm run dev
 ```
 
 To run Wrangler:
 
 ```sh
-npm run build
-npm run start
+pnpm run preview
 ```
 
 ## Typegen
@@ -23,7 +42,7 @@ npm run start
 Generate types for your Cloudflare bindings in `wrangler.toml`:
 
 ```sh
-npm run typegen
+pnpm run typegen
 ```
 
 You will need to rerun typegen whenever you make changes to `wrangler.toml`.
@@ -33,13 +52,13 @@ You will need to rerun typegen whenever you make changes to `wrangler.toml`.
 First, build your app for production:
 
 ```sh
-npm run build
+pnpm run build
 ```
 
 Then, deploy your app to Cloudflare Pages:
 
 ```sh
-npm run deploy
+pnpm run deploy
 ```
 
 ## Styling
